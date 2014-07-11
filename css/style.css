@@ -1,4 +1,9 @@
-/*Reset brower specfic CSS*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,38 +29,36 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-
+body {
+  line-height: 1;
+}
 ol, ul {
   list-style: none;
 }
 blockquote, q {
   quotes: none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
-
-p { margin-bottom: 10px;
-}
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/*Start Map CSS*/
+/* OK Start */
 body{
-background-color:#333333;
-color:#ffffff;
+background-color:#fff;
+color:#555;
 font-size: 1em;
 line-height: 1.5em;
 font-weight:300px;
-font-family: 'Quattrocento Sans', sans-serif;
-margin: 0 auto;
-width: 750px;
+font-family: Georgia, serif;
+margin: 2em auto 0;
+width: 600px;
+padding: 2em;
 }
 
 header {
@@ -66,7 +69,7 @@ h1 {
 font-size: 2em;
 margin-bottom: .5em;
 line-height: 1em;
-font-weight: bold;
+font-weight: normal;
 padding-right: 3px;
 /*text-shadow: 1px 1px 1px #555;*/
 }
@@ -82,7 +85,9 @@ margin-bottom: 1em;
 	margin-bottom: 40px;
 }
 
-
+p{
+  margin: 1em 0;
+}
 
 strong {
   font-weight: bold;
@@ -97,7 +102,7 @@ strong {
     color: #F2F2F2;
     font-size: 1em;
     margin-top: 1em;
-    padding: 2px;
+    padding: 6px 2px;
     width: 75px;
 }
 

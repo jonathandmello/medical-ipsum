@@ -14,23 +14,45 @@ $("#ipsum-form").submit(function() {
   var paragraph_number = $("#paragraph_count").val();
 
 //Define var words as an empty array
-  var words = [];
+  var words = 
+    [
+      "lab test results", 
+      "current regimen", 
+      "keep healthy", 
+      "most cases",
+      "are preventable", 
+      "virus infection rates slowing", 
+      "slight increase in your", 
+      "blood sugar levels", 
+      "this week", 
+      "ventricular fluctuation", 
+      "in the lower arbortarium",
+      "seem to be",
+      "a cause of disruption to the", 
+      "right centricular vehicula", 
+      "dosage of Seratonin", 
+      "to the heart directly",
+      "abscessed tooth swollen face", 
+      "dentist prescribed amoxicillin", 
+      "swelling decreased", 
+      "increased pain", 
+      "glucometer", 
+      "pedometer", 
+      "blood Test", 
+      "patient",
+      "abnormality",
+      "health record",
+      "universal",
+      "ayurveda",
+      "root canal",
+      "in the event of",
+      "different types",
+    ];
 
-//Create an array of words to randomize later
-  var words_bob = ["bob", "reginald t moneybags", "mc hammer", "vanilla ice", "@withloudhands", "remote-control helicopters", "kill your idols", "github hoodie", "i don't care"];
-  var words_nobob = ["sunac", "rails", "febreze", "feelings friday", "drilling", "sinatra", "brita", "pizza", "beer", "number seven subs", "smoothie", "blue dog cafe", "shit avi says", "friday after flatiron"];  
-  var words_all = words_bob.concat(words_nobob);
-
-//ELSE IF determines which array of words to show the user
-  if (chosen_button == "straight-up") {
-   words = words_all;
-} else if (chosen_button == "all-bob") {
-   words = words_bob; 
-} else {
-words = words_nobob; }
 
 //Vary the number of sentences in each paragraph randomly
-var sentence_number = Math.floor( (Math.random()+4) * 2 );
+var sentence_number = Math.floor( (Math.random()+1) * 2);
+//var sentence_number = 3;
 
 //Use a function that randomizes the contents of an array
   function fisherYates(words) {
@@ -50,31 +72,32 @@ var sentence_number = Math.floor( (Math.random()+4) * 2 );
 for ( var z = 0; z < paragraph_number; z++ ) {
   var sentence_group = '';
 
-//Start the second FOR loop that builds sentence groups from sentences
-for ( var y = 0; y < sentence_number; y++ ) {
+  //Start the second FOR loop that builds sentence groups from sentences
+  for ( var y = 0; y < sentence_number; y++ ) {
 
-//Start the third FOR loop that builds paragraphs from sentence groups
-for ( var x = 0; x < words.length; x++ ) {
+    //Start the third FOR loop that builds paragraphs from sentence groups
+    for ( var x = 0; x < words.length; x++ ) {
 
-//Create a variable for the randomized array of words
-  var words_random = fisherYates(words);
+      //Create a variable for the randomized array of words
+      var words_random = fisherYates(words);
+      // var words_selected = words_random.splice(0,6);
 
-//Convert array to string with no commas or quotes, add period to end
-  var sentence = words_random.toString().replace(/,/g, ' ') + '. ';
+      //Convert array to string with no commas or quotes, add period to end
+      var sentence = words_random.slice(0,7).toString().replace(/,/g, ' ') + '. ';
 
-//Capitalize first letter in string
-  function capitalizeFirstLetter(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-  var sentence_capped = capitalizeFirstLetter(sentence);
-//End the first FOR loop that builds sentences from words
-          }
+      //Capitalize first letter in string
+      function capitalizeFirstLetter(string) {
+          return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+      var sentence_capped = capitalizeFirstLetter(sentence);
+    //End the first FOR loop that builds sentences from words
+    }
   sentence_group += sentence_capped;  
-//End the second FOR loop that builds sentence groups from sentences
-       }
+  //End the second FOR loop that builds sentence groups from sentences
+  }
   paragraphs+='<p>' + sentence_group + '</p>';
 //End the third FOR loop that builds and spaces paragraphs from sentence groups
-    }
+}
 
 $("#print-paragraphs").empty().html(paragraphs);
 

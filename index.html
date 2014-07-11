@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Flatiron Ipsum</title>
+	<title>Medical Ipsum</title>
 	<link rel="stylesheet" href="css/style.css">
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -11,27 +11,15 @@
 	
 <body>
 
-<img src = "fi.png" style = "border-bottom: 1px white solid;">
+<h1>Medical Ipsum</h1>
 
-<p>How much nonsense would you like?</p>
+<p>How much would you like?</p>
 
 		<form id="ipsum-form" action="#" method="post">
-			Paragraphs: <input id="paragraph_count" style="width: 25px;" type="text" maxlength="2" /><br>
-			Type:
+			Paragraphs: 
+			<input id="paragraph_count" style="width: 25px;" type="text" maxlength="2" value="1" /> <br>
 
-						<!-- default choice on load -->
-						<input id="default" type="radio" name="choice" value="default" style="display:none" />
-						<!-- straight up -->
-						<input id="straight-up" type="radio" name="choice" value="straight-up" checked />
-						<label for="straight-up">Straight Up</label> 
-						<!-- all bob -->
-						<input id="all-bob" type="radio" name="choice" value="all-bob" />
-						<label for="all-bob">All Bob</label> 
-						<!-- no bob -->
-						<input id="no-bob" type="radio" name="choice" value="no-bob" />
-						<label for="no-bob">No Bob</label><br>
-						<!-- submit button -->
-						<input type="submit" id="submit" value="Submit" />
+			<input type="submit" id="submit" value="Submit" />
 		</form>
 
 		<div id="print-paragraphs"></div>
